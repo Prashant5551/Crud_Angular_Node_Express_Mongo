@@ -67,4 +67,52 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+//update a student
+router.put('/:id', async (req, res) => {
+    try {
+        const { name, age, email, studentClass, address, phone } = req.body;
+        //required validation
+        if (!name || !age || !email || !studentClass || !address || !phone) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+        const updatedStudent = await Student.findByIdAndUpdate(req.params.id, {
+            name,
+            age,
+            email,
+            studentClass,
+            address,
+            phone
+        })
+        if (!updatedStudent) {
+            return res.status(400).json({ message: 'Student not found' });
+        }
+        return res.status(201).json({
+            meessage: "Student updated successfully",
+            student: updatedStudent,
+            status: "success"
+        })
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
+
+//delete api
+router.delete('/:id', async (req, res) => {
+    try {
+        const deleteStudent = await Student.findByIdAndDelete(req.params.id);
+        if (!deleteStudent) {
+            return res.status(400).json({ message: "Student not found" });
+        }
+        return res.status(200).json({
+            meessage: "Student deleted successfully",
+            status: "success"
+        })
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
+
+
+
 module.exports = router;
