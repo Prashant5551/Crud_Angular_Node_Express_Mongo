@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ModalCrud } from "./modal-crud/modal-crud";
+import { SidePanel } from "./side-panel/side-panel";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ModalCrud],
+  imports: [ModalCrud, SidePanel, RouterLink, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
