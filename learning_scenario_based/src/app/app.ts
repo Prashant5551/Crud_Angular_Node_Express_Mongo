@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { ModalCrud } from "./modal-crud/modal-crud";
-import { SidePanel } from "./side-panel/side-panel";
+import { ModalCrud } from "./pages/modal-crud/modal-crud";
+import { SidePanel } from "./pages/side-panel/side-panel";
 
 @Component({
   selector: 'app-root',

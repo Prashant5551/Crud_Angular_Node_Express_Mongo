@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { ModalCrud } from './modal-crud/modal-crud';
-import { SidePanel } from './side-panel/side-panel';
+import { ModalCrud } from './pages/modal-crud/modal-crud';
+import { SidePanel } from './pages/side-panel/side-panel';
+import { FormAboveTableCrud } from './pages/form-above-table-crud/form-above-table-crud';
 
 export const routes: Routes = [
     {
@@ -10,5 +11,9 @@ export const routes: Routes = [
     {
         path: 'side-panel',
         component: SidePanel
+    },
+    {
+        path: 'form-above-table',
+        component: FormAboveTableCrud
     }
 ];
