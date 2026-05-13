@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-inline-table-crud',
-  imports: [FormsModule,JsonPipe],
+  imports: [FormsModule, JsonPipe],
   templateUrl: './inline-table-crud.html',
   styleUrl: './inline-table-crud.css',
 })
@@ -61,4 +61,45 @@ export class InlineTableCrud {
       "departmentLogo": "testt"
     }
   ])
+
+  checkedIdsList = signal<number[]>([]);
+
+  onAddNew() {
+    const newObj = {
+      "departmentId": 0,
+      "departmentName": "",
+      "departmentLogo": ""
+    };
+    this.deptList.update(oldData => [newObj, ...oldData]);
+  }
+
+  onSaveAll() {
+    const data = this.deptList();
+    debugger;
+  }
+
+  addCheckedItem(event: any, id: number) {
+    debugger;
+    if (event.target.checked) {
+      this.checkedIdsList.update(oldList => [...oldList, id]);
+    } else {
+      const elementIndex = this.checkedIdsList().findIndex(m => m === id);
+      this.checkedIdsList().splice(elementIndex, 1);
+    }
+  }
+
+  SelectAll(event: any) {
+    if (event.target.checked) {
+      this.deptList().forEach((element: any) => {
+        this.checkedIdsList.update(oldList => [...oldList, element.departmentId])
+      });
+    } else {
+      this.checkedIdsList.set([]);
+    }
+  }
+
+  getCheckedStatus(id: number) {
+    return this.checkedIdsList().includes(id);
+  }
+
 }
