@@ -1,0 +1,93 @@
+<div class="row">
+    <div class="col-6">
+        User List
+    </div>
+    <div class="col-6 text-end">
+        <button class="btn btn-primary" routerLink="/new-form">Add</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table table-table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn btn-primary" routerLink="/new-form/121">Edit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onEdit(222)">Edit</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onEditRecord(222)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<div class="modal" #myModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">User Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Password</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closeModel()"
+                    data-bs-dismiss="modal">Close</button>
+            </div> -->
+
+        </div>
+    </div>
+</div>
