@@ -1,8 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { TopicInfo } from '../../reusableComponents/topic-info/topic-info';
 
 @Component({
   selector: 'app-modal-crud',
-  imports: [],
+  imports: [TopicInfo],
   templateUrl: './modal-crud.html',
   styleUrl: './modal-crud.css',
 })
