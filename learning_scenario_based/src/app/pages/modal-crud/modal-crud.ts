@@ -1,10 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { TopicInfo } from '../../reusableComponents/topic-info/topic-info';
 
 @Component({
   selector: 'app-modal-crud',
   imports: [TopicInfo],
   templateUrl: './modal-crud.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './modal-crud.css',
 })
 export class ModalCrud {

@@ -1,10 +1,11 @@
 import { NgClass } from '@angular/common';
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, signal, WritableSignal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-side-panel',
   imports: [NgClass],
   templateUrl: './side-panel.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './side-panel.css',
 })
 export class SidePanel {
