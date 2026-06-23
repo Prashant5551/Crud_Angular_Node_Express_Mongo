@@ -1,1 +1,51 @@
-<p>data-binding works!</p>
+<table>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="productName">
+        </td>
+        <input type="checkbox" [(ngModel)]="isModelActive">
+        {{isModelActive}}
+    </tr>
+</table>
+
+
+<table style="width: 100%;">
+    <tr>
+        <td>
+            {{productName}}
+        </td>
+        <td>
+            <span>{{productSize}}</span>
+        </td>
+        <td>
+            <input type="text" [maxLength]="maxAllowedChar">
+        </td>
+        <td>
+            <input type="text" [value]="productName">
+        </td>
+        <td>
+            <input type="{{myDynamictype}}">
+        </td>
+    </tr>
+</table>
+<hr>
+<hr>
+<table>
+    <tr>
+        <td>
+            <button (click)="showWelcometext()"> Show Welcome</button>
+        </td>
+        <td>
+        /* (change)="onDropdownChange()" */
+            <select [(ngModel)]="productName"> 
+                <option>Headphone</option>
+                <option>Mobile</option>
+                <option>Laptop</option>
+                <option>Charger</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeft()"
+    style="background-color: red;width: 100px;height: 100px; border-radius: 50px;"></div>
