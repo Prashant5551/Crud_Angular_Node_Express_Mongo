@@ -5,6 +5,8 @@ import { FormAboveTableCrud } from './pages/form-above-table-crud/form-above-tab
 import { InlineTableCrud } from './pages/inline-table-crud/inline-table-crud';
 import { List } from './pages/list/list';
 import { NewForm } from './pages/new-form/new-form';
+import { Variables } from './Angular_22/variables/variables';
+import { DataBinding } from './Angular_22/data-binding/data-binding';
 
 export const routes: Routes = [
     {
@@ -30,5 +32,13 @@ export const routes: Routes = [
     {
         path: 'new-form/:id',
         component: NewForm
-    }
+    },
+    {
+        path:'variables',
+        component:Variables
+    },
+    {
+        path:'data-binding',
+        component: DataBinding
+    },
 ];
