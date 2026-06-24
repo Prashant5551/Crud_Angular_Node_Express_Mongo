@@ -7,6 +7,8 @@ import { List } from './pages/list/list';
 import { NewForm } from './pages/new-form/new-form';
 import { Variables } from './Angular_22/variables/variables';
 import { DataBinding } from './Angular_22/data-binding/data-binding';
+import { DirectiveExp } from './Angular_22/directive-exp/directive-exp';
+import { NotFound } from './Angular_22/not-found/not-found';
 
 export const routes: Routes = [
     {
@@ -41,4 +43,12 @@ export const routes: Routes = [
         path:'data-binding',
         component: DataBinding
     },
+    {
+        path:'directive',
+        component: DirectiveExp
+    },
+    {
+        path: '**',
+        component: NotFound
+    }
 ];
