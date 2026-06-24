@@ -1,1 +1,22 @@
-<p>directive-exp works!</p>
+<div class="row">
+    <div class="col-3">
+        <div class="p-4" [ngClass]="divClassName">
+            Div 1
+        </div>
+    </div>
+</div>
+
+<div class="col-3">
+    <div class="p-3" [ngClass]="isCheckActive == true ? 'bg-warning' : 'bg-primary'"></div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="addDiv1Class('bg-success')">Success</button>
+        <button class="btn btn-danger" (click)="addDiv1Class('bg-danger')">Danger</button>
+    </div>
+</div>
+
+<div class="col-3">
+    <input type="checkbox" [(ngModel)]="isCheckActive">
+</div>
