@@ -9,6 +9,7 @@ import { Variables } from './Angular_22/variables/variables';
 import { DataBinding } from './Angular_22/data-binding/data-binding';
 import { DirectiveExp } from './Angular_22/directive-exp/directive-exp';
 import { NotFound } from './Angular_22/not-found/not-found';
+import { ControlFlow } from './Angular_22/control-flow/control-flow';
 
 export const routes: Routes = [
     {
@@ -36,16 +37,20 @@ export const routes: Routes = [
         component: NewForm
     },
     {
-        path:'variables',
-        component:Variables
+        path: 'variables',
+        component: Variables
     },
     {
-        path:'data-binding',
+        path: 'data-binding',
         component: DataBinding
     },
     {
-        path:'directive',
+        path: 'directive',
         component: DirectiveExp
+    },
+    {
+        path: 'control_flow',
+        component: ControlFlow
     },
     {
         path: '**',

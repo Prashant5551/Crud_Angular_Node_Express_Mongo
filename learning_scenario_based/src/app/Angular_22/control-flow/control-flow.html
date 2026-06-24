@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-3">
+        @if (isDivVisible == true) {
+        <div class="bg-primary">
+            Div 1
+        </div>
+        }
+    </div>
+</div>
+
+<div class="col-3">
+    <input type="checkbox" [(ngModel)]="isOffer"> is offer code avail
+    @if (isOffer) {
+    <input type="text" placeholder="Enter code">
+    }@else {
+    <p>No offer code needed</p>
+    }
+</div>
+
+<div class="col-3">
+    @if (orderStatus == 'new') {
+    <h3>Order Placed</h3>
+    } @else if (orderStatus == 'ship') {
+    <h3>Order in shipping</h3>
+    } @else if ( orderStatus == 'del') {
+    <h3>Delivered</h3>
+    } @else {
+    <h3 class="danger">Order failed</h3>
+    }
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="btn btn-warning" (click)="toggle()">
+            Toggle
+        </div>
+    </div>
+</div>
+
+<table>
+    <div class="row">
+        <div class="col-3">
+            <tr>
+                @for (item of cityList; track $index) {
+                <td>
+                    {{item}}
+                </td>
+                <ul>
+                    <li>
+                        <button>{{item}}</button>
+                    </li>
+                </ul>
+                }
+
+            </tr>
+
+            @for (item of cityList; track $index) {
+            <td>
+                <select>
+                    <option>{{item}}</option>
+                </select>
+            </td>
+            }
+        </div>
+    </div>
+</table>
+
+<hr>
+<hr>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Sr No</td>
+            <td>Name</td>
+            <td>Roll No</td>
+            <td>City</td>
+        </tr>
+    </thead>
+    @for (item of studentList; track $index) {
+    <tr>
+        <td>{{$index+1}}</td>        
+        <td>{{item.name}}</td>
+        <td>{{item.rollNo}}</td>
+        <td>{{item.city}}</td>                
+    </tr>
+    }
+</table>
