@@ -20,3 +20,40 @@
 <div class="col-3">
     <input type="checkbox" [(ngModel)]="isCheckActive">
 </div>
+
+<hr>
+<hr>
+
+<div class="col-3">
+    <input type="text" [(ngModel)]="num1" placeholder="Enter 5 digits">
+    <h1 [ngClass]="isTextValid ? 'text-danger' :'text-susccess'">
+        {{num1.length > 5 ? 'Text is invalid' : 'Text is valid'}}
+    </h1>
+</div>
+
+<div class="col-3">
+    <button class="btn btn-success" (click)="checkCharrLength()">Check Length</button>
+</div>
+
+<hr>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <div class="p-3" [ngStyle]="{'background-color':inputColorValue }">
+            Div 3
+        </div>
+    </div>
+    <div class="col-3" [ngStyle]="div4Css">
+        div 4
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <input type="color" [(ngModel)]="inputColorValue">
+    </div>
+    <div class="col-3">
+        <button (click)="changeType('circle')">Circle</button>
+        <button (click)="changeType('square')">Square</button>
+    </div>
+</div>
