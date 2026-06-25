@@ -10,6 +10,7 @@ import { DataBinding } from './Angular_22/data-binding/data-binding';
 import { DirectiveExp } from './Angular_22/directive-exp/directive-exp';
 import { NotFound } from './Angular_22/not-found/not-found';
 import { ControlFlow } from './Angular_22/control-flow/control-flow';
+import { TemplateForm } from './Angular_22/template-form/template-form';
 
 export const routes: Routes = [
     {
@@ -51,6 +52,10 @@ export const routes: Routes = [
     {
         path: 'control_flow',
         component: ControlFlow
+    },
+        {
+        path:'temp-form',
+        component: TemplateForm
     },
     {
         path: '**',

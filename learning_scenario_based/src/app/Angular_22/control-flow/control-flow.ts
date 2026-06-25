@@ -4,7 +4,7 @@ import { InlineTableCrud } from "../../pages/inline-table-crud/inline-table-crud
 
 @Component({
   selector: 'app-control-flow',
-  imports: [FormsModule, InlineTableCrud],
+  imports: [FormsModule],
   templateUrl: './control-flow.html',
   styleUrl: './control-flow.css',
 })
