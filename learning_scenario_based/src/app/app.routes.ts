@@ -11,6 +11,7 @@ import { DirectiveExp } from './Angular_22/directive-exp/directive-exp';
 import { NotFound } from './Angular_22/not-found/not-found';
 import { ControlFlow } from './Angular_22/control-flow/control-flow';
 import { TemplateForm } from './Angular_22/template-form/template-form';
+import { ReactiveForms } from './Angular_22/reactive-forms/reactive-forms';
 
 export const routes: Routes = [
     {
@@ -53,9 +54,13 @@ export const routes: Routes = [
         path: 'control_flow',
         component: ControlFlow
     },
-        {
-        path:'temp-form',
+    {
+        path: 'temp-form',
         component: TemplateForm
+    },
+    {
+        path: 'react-form',
+        component: ReactiveForms
     },
     {
         path: '**',

@@ -26,7 +26,7 @@ var fun = function () {
 fun();
 
 const fn = (a, x, y, ...numbers) => {
-    console.log(a,x, y, numbers)
+    console.log(a, x, y, numbers)
 }
 
 fn(1, 2, 6, 8, 6, 7, 7, 4);
@@ -41,3 +41,16 @@ fn(1, 2, 6, 8, 6, 7, 7, 4);
 // }
 
 // processUserInput(greeting);
+
+let user = {
+    usrname: 'prashant',
+    rc1: () => {
+        console.log('subscribe', this.usrname);
+    },
+    rc2() {
+        console.log('subscribe', this.usrname);
+    }
+}
+
+user.rc1();
+user.rc2();
