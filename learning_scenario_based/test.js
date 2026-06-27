@@ -1,7 +1,10 @@
+// Closure is a function that is references variables in a outer scope from it's inner scope 
+
 // const a = 5;
 // const a;
 
 // console.log(a);
+var a = 7;
 
 function abc() {
     console.log(a);
@@ -10,7 +13,7 @@ function abc() {
     // const c = 30;
 }
 
-// abc();
+abc();
 
 var x = 4;
 
@@ -29,7 +32,7 @@ const fn = (a, x, y, ...numbers) => {
     console.log(a, x, y, numbers)
 }
 
-fn(1, 2, 6, 8, 6, 7, 7, 4);
+// fn(1, 2, 6, 8, 6, 7, 7, 4);
 
 // function greeting(name){
 //     alert('hello', + name);
@@ -52,5 +55,18 @@ let user = {
     }
 }
 
-user.rc1();
-user.rc2();
+// user.rc1();
+// user.rc2();
+
+//closures
+
+function makeFunc() {
+    var name = 'prashant';
+    function displayName() {
+        console.log(name);
+    }
+    return displayName;
+}
+var myFunc = makeFunc();
+myFunc();
+console.log(myFunc);

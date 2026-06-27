@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3">
+        {{employeeName}}
+        {{empMobNo()}}
+        {{isActive()}}
+    </div>
+</div>
+
+<div class="col-3">
+    <ul>
+        @for (item of cityList(); track $index) {
+        <li>{{item}}</li>
+        }
+    </ul>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <div class="btn btn-success" (click)="chngEmpName()">Change Employee Name</div>
+    </div>
+        <div class="col-3">
+        <div class="btn btn-success" (click)="chngMobNo()">Change Mobile Number</div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ import { NotFound } from './Angular_22/not-found/not-found';
 import { ControlFlow } from './Angular_22/control-flow/control-flow';
 import { TemplateForm } from './Angular_22/template-form/template-form';
 import { ReactiveForms } from './Angular_22/reactive-forms/reactive-forms';
+import { SignalBasic } from './Angular_22/signal-basic/signal-basic';
 
 export const routes: Routes = [
     {
@@ -61,6 +62,10 @@ export const routes: Routes = [
     {
         path: 'react-form',
         component: ReactiveForms
+    },
+    {
+        path: 'signal-basic',
+        component: SignalBasic
     },
     {
         path: '**',

@@ -68,8 +68,8 @@
                                             @if (userForm.controls['emailId'].errors?.['required']) {
                                             <span>This is required</span>
                                             }
-                                            @if (userForm.controls['emailId'].errors?.['minlength']) {
-                                            <span>Min 4 char needed</span>
+                                            @if (userForm.controls['emailId'].errors?.['email']) {
+                                            <span>Email is required</span>
                                             }
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
                             </div>
 
                             <div class="card-footer text-end">
-                                <button type="submit" class="btn btn-primary me-2">
+                                <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary me-2">
                                     Save
                                 </button>
 
