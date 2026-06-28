@@ -16,6 +16,14 @@ export class SignalBasic {
   isActive: WritableSignal<boolean> = signal(false);
   cityList: WritableSignal<string[]> = signal(['Pune', 'Killari', 'Parbhani'])
 
+  constructor(){
+    setTimeout(()=>{
+      this.employeeName = 'Mayuri Kamble';
+      // this.empMobNo.set(1622);
+    },3000);
+  }
+
+
   chngEmpName() {
     this.employeeName = 'Mayuri'
   }
