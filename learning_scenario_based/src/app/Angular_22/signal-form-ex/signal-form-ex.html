@@ -1,1 +1,31 @@
-<p>signal-form-ex works!</p>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [formField]="employeeForm.empName" placeholder="Name">
+        <div class="text-danger">
+            @if (employeeForm.empName().touched()) {
+            @for (item of employeeForm.empName().errors(); track $index) {
+            {{item.message}}
+            }
+            }
+        </div>
+    </div>
+    <div class="col-3">
+        <input type="text" [formField]="employeeForm.empCity" placeholder="City">
+        <div class="text-danger">
+            @if (employeeForm.empName().touched()) {
+            @for (item of employeeForm.empCity().errors(); track $index) {
+            {{item.message}}
+            }
+            }
+        </div>
+    </div>
+    <div class="col-3">
+        <input type="text" [formMethod]="employeeForm.empState" placeholder="State">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <button (click)="saveEmp()">Save</button>
+    </div>
+</div>
