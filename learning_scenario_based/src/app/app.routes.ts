@@ -14,6 +14,7 @@ import { TemplateForm } from './Angular_22/template-form/template-form';
 import { ReactiveForms } from './Angular_22/reactive-forms/reactive-forms';
 import { SignalBasic } from './Angular_22/signal-basic/signal-basic';
 import { SignalFormEx } from './Angular_22/signal-form-ex/signal-form-ex';
+import { GetAPIEx } from './Angular_22/get-apiex/get-apiex';
 
 export const routes: Routes = [
     {
@@ -69,8 +70,12 @@ export const routes: Routes = [
         component: SignalBasic
     },
     {
-        path:'signal-form',
+        path: 'signal-form',
         component: SignalFormEx
+    },
+    {
+        path: 'get-api',
+        component: GetAPIEx
     },
     {
         path: '**',
