@@ -12,6 +12,7 @@ export class GetAPIEx {
   http = inject(HttpClient); //from angular 16
 
   userList: WritableSignal<any[]> = signal([]);
+  photoList: WritableSignal<any[]> = signal([]);
 
   constructor() {
     console.log(this.userList);
@@ -25,6 +26,14 @@ export class GetAPIEx {
         this.userList.set(res);
         console.log(this.userList);
       }, error: (error: any) => {
+
+      }
+    })
+  }
+
+  getPhotos(){
+    this.http.get("https://jsonplaceholder.typicode.com/photos").subscribe({
+      next: (res:any) =>{
 
       }
     })
