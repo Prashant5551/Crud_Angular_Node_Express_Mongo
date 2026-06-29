@@ -13,16 +13,18 @@ export class GetAPIEx {
 
   userList: WritableSignal<any[]> = signal([]);
   photoList: WritableSignal<any[]> = signal([]);
+  vendorList: WritableSignal<any[]> = signal([]);
 
   constructor() {
     console.log(this.userList);
     console.log(this.getAllUsers());
+    this.getPhotos();
+    this.getVendor();
   }
 
   getAllUsers() {
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe({
       next: (res: any) => {
-        debugger;
         this.userList.set(res);
         console.log(this.userList);
       }, error: (error: any) => {
@@ -31,9 +33,22 @@ export class GetAPIEx {
     })
   }
 
-  getPhotos(){
+  getPhotos() {
     this.http.get("https://jsonplaceholder.typicode.com/photos").subscribe({
-      next: (res:any) =>{
+      next: (res: any) => {
+        this.photoList.set(res);
+        console.log(this.photoList);
+      }, error: (error: any) => {
+
+      }
+    })
+  }
+
+  getVendor() {
+    this.http.get("https://api.freeprojectapi.com/api/BusBooking/GetBusVendors").subscribe({
+      next: (res: any) => {
+        this.vendorList.set(res);
+      }, error: (error: any) => {
 
       }
     })
