@@ -41,7 +41,7 @@ export class CrudAPI {
   }
 
   onSaveClient() {
-    this.http.post('https://api.freeprojectapi.com/api/SmartParking/addClient',this.newClientObj).subscribe({
+    this.http.post('https://api.freeprojectapi.com/api/SmartParking/addClient', this.newClientObj).subscribe({
       next: (res: any) => {
         if (res.result) {
           alert('client created');
@@ -51,6 +51,40 @@ export class CrudAPI {
         }
       }
     })
+  }
+
+  updateClient() {
+    this.http.post('https://api.freeprojectapi.com/api/SmartParking/UpdateClient', this.newClientObj).subscribe({
+      next: (res: any) => {
+        if (res.result) {
+          alert('client updated');
+          this.getAllClients()
+        } else {
+          console.log(res.message)
+        }
+      }
+    })
+  }
+
+  onEdit(data: any) {
+    this.newClientObj = data;
+  }
+
+  onDelete(id: number) {
+    const isConfirm = confirm("Are you want to delete?");
+    if (isConfirm) {
+      this.http.post('https://api.freeprojectapi.com/api/SmartParking/DeleteClient?id=', +id).subscribe({
+        next: (res: any) => {
+          if (res.result) {
+            alert('client Deleted');
+            this.getAllClients()
+          } else {
+            console.log(res.message)
+          }
+        }
+      })
+    }
+
   }
 
 }
