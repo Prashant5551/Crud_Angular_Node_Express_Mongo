@@ -15,6 +15,8 @@ export class GetAPIEx {
   photoList: WritableSignal<any[]> = signal([]);
   vendorList: WritableSignal<any[]> = signal([]);
 
+  userList2: any[] = [];
+
   constructor() {
     console.log(this.userList);
     console.log(this.getAllUsers());

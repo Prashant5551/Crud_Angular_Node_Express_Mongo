@@ -15,6 +15,7 @@ import { ReactiveForms } from './Angular_22/reactive-forms/reactive-forms';
 import { SignalBasic } from './Angular_22/signal-basic/signal-basic';
 import { SignalFormEx } from './Angular_22/signal-form-ex/signal-form-ex';
 import { GetAPIEx } from './Angular_22/get-apiex/get-apiex';
+import { CrudAPI } from './Angular_22/crud-api/crud-api';
 
 export const routes: Routes = [
     {
@@ -76,6 +77,10 @@ export const routes: Routes = [
     {
         path: 'get-api',
         component: GetAPIEx
+    },
+    {
+        path: 'crud-api',
+        component: CrudAPI
     },
     {
         path: '**',
