@@ -13,15 +13,17 @@ export class CrudAPI {
 
   http = inject(HttpClient);
   clientList: WritableSignal<any[]> = signal([]);
-
-  companyObj: any =
-    {
-      companyId: 0,
-      companyName: '',
-      pinCode: '',
-      address: '',
-      phone: '',
-    }
+  newClientObj: any = {
+    clientId: 0,
+    clientName: '',
+    businessName: '',
+    contactPerson: '',
+    contactNo: '',
+    altContactNo: '',
+    email: '',
+    createdDate: '',
+    logo: 'string'
+  }
 
   constructor() {
     this.getAllClients();
@@ -32,8 +34,21 @@ export class CrudAPI {
       next: (res: any) => {
         this.clientList.set(res.data);
       },
-      error : (error: any)=>{
+      error: (error: any) => {
 
+      }
+    })
+  }
+
+  onSaveClient() {
+    this.http.post('https://api.freeprojectapi.com/api/SmartParking/addClient',this.newClientObj).subscribe({
+      next: (res: any) => {
+        if (res.result) {
+          alert('client created');
+          this.getAllClients()
+        } else {
+          console.log(res.message)
+        }
       }
     })
   }
