@@ -13,7 +13,7 @@ function abc() {
     // const c = 30;
 }
 
-abc();
+// abc();
 
 var x = 4;
 
@@ -26,7 +26,7 @@ var fun = function () {
     // let y = 50;
 };
 
-fun();
+// fun();
 
 const fn = (a, x, y, ...numbers) => {
     console.log(a, x, y, numbers)
@@ -45,15 +45,15 @@ const fn = (a, x, y, ...numbers) => {
 
 // processUserInput(greeting);
 
-let user = {
-    usrname: 'prashant',
-    rc1: () => {
-        console.log('subscribe', this.usrname);
-    },
-    rc2() {
-        console.log('subscribe', this.usrname);
-    }
-}
+// let user = {
+//     usrname: 'prashant',
+//     rc1: () => {
+//         console.log('subscribe', this.usrname);
+//     },
+//     rc2() {
+//         console.log('subscribe', this.usrname);
+//     }
+// }
 
 // user.rc1();
 // user.rc2();
@@ -67,6 +67,44 @@ function makeFunc() {
     }
     return displayName;
 }
-var myFunc = makeFunc();
-myFunc();
-console.log(myFunc);
+// var myFunc = makeFunc();
+// myFunc();
+// console.log(myFunc);
+
+const hobbies = ['sports', 'cooking'];
+hobbies.push('Reading'); //add last
+hobbies.unshift('coding'); //add first
+// const poppedValue = hobbies.pop(); //pop remove last
+// hobbies.shift(); //remove first
+// console.log(hobbies);
+
+hobbies.splice(1, 0, 'reading1');
+// console.log(hobbies)
+
+hobbies.splice(1, 2); // remove from 1st index and 2 elements
+// console.log(hobbies);
+
+const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+// const storeResults = testResults.slice(2,-2);  //slice() is used for copies an array
+// testResults.push(5.91);
+// const storeResults = testResults.concat([3.99]); // concat add value in new array
+// console.log(storeResults, testResults);
+// console.log(testResults.indexOf(1));
+
+const personData =[{name:'pk'},{ name: 'mk'}];
+console.log(personData.indexOf({name: 'pk'}));
+
+const mk = personData.find((i)=>{
+    return i.name === 'mk';
+})
+
+const fI = personData.findIndex((i)=>{
+    return i.name === 'bk'; 
+})
+
+console.log(fI);
+
+mk.name = 'bk';
+console.log(mk, personData);
+
+
