@@ -2,6 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Master } from '../master';
 
 @Component({
   selector: 'app-crud-api',
@@ -25,8 +26,12 @@ export class CrudAPI {
     logo: 'string'
   }
 
+  masterServ = inject(Master);
+
   constructor() {
     this.getAllClients();
+    debugger;
+    const loggedUser = this.masterServ.loggedUser;
   }
 
   getAllClients() {

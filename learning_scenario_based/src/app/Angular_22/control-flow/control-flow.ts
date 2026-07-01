@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InlineTableCrud } from "../../pages/inline-table-crud/inline-table-crud";
+import { Master } from '../master';
 
 @Component({
   selector: 'app-control-flow',
@@ -13,6 +14,11 @@ export class ControlFlow {
   isOffer = false;
   orderStatus = "new";
 
+  originalCardNo = "1212456578454330";
+  formCardNo: string = '';
+
+  masterServ = inject(Master);
+
   cityList = ["Latur", "Pune", "Killari", "Pune"];
 
   studentList = [
@@ -21,9 +27,18 @@ export class ControlFlow {
     { name: 'pk', rollNo: 22, city: 'Killari' },
   ]
 
+  constructor() {
+    this.formCardNo = this.masterServ.getFormattedCardNo(this.originalCardNo);
+  }
+
 
   toggle() {
     this.isDivVisible = !this.isDivVisible;
+  }
+
+  storeLoggedData() {
+    debugger;
+    this.masterServ.loggedUser = 'prashant_kamble';
   }
 
 }
