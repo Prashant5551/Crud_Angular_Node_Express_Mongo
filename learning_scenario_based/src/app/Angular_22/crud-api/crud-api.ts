@@ -30,7 +30,6 @@ export class CrudAPI {
 
   constructor() {
     this.getAllClients();
-    debugger;
     const loggedUser = this.masterServ.loggedUser;
   }
 

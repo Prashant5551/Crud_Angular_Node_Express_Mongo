@@ -91,20 +91,28 @@ const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
 // console.log(storeResults, testResults);
 // console.log(testResults.indexOf(1));
 
-const personData =[{name:'pk'},{ name: 'mk'}];
-console.log(personData.indexOf({name: 'pk'}));
+const personData = [{ name: 'pk' }, { name: 'mk' }];
+// console.log(personData.indexOf({name: 'pk'}));
 
-const mk = personData.find((i)=>{
+const mk = personData.find((i) => {
     return i.name === 'mk';
 })
 
-const fI = personData.findIndex((i)=>{
-    return i.name === 'bk'; 
+const fI = personData.findIndex((i) => {
+    return i.name === 'bk';
 })
 
-console.log(fI);
+// console.log(fI);
 
 mk.name = 'bk';
-console.log(mk, personData);
+// console.log(mk, personData);
 
+for (var i = 0; i < 3; i++) {
+    function inner(i) { //closure ex to print 0 1 2 without using var
+        setTimeout(() => {
+            console.log(i);
+        }, i * 1000)
+    }
+    inner(i);
+}
 

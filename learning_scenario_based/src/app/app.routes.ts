@@ -16,6 +16,7 @@ import { SignalBasic } from './Angular_22/signal-basic/signal-basic';
 import { SignalFormEx } from './Angular_22/signal-form-ex/signal-form-ex';
 import { GetAPIEx } from './Angular_22/get-apiex/get-apiex';
 import { CrudAPI } from './Angular_22/crud-api/crud-api';
+import { PipeExample } from './Angular_22/pipe-example/pipe-example';
 
 export const routes: Routes = [
     {
@@ -81,6 +82,10 @@ export const routes: Routes = [
     {
         path: 'crud-api',
         component: CrudAPI
+    },
+    {
+        path: 'pipeExample',
+        component: PipeExample
     },
     {
         path: '**',
